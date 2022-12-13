@@ -1,6 +1,7 @@
 import requests
 import json
 import datetime
+from datetime import timezone,timedelta
 import time
 ##
 import Lib
@@ -28,7 +29,7 @@ def get_data():
     #print(_time)
     ## 換日
     if _time.hour>21 and _time.hour < 24:
-        dateToday = _time + datetime.timedelta(days=1)
+        dateToday = _time + timedelta(days=1)
     else:
         dateToday = _time
     #print(dateToday)
