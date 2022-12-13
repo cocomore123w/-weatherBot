@@ -24,16 +24,18 @@ timeZone=["0點-3點",
           "21點-0點"]
 
 def get_data():
-    _time = time.localtime(time.time())
+    _time = datetime.datetime.today().astimezone(timezone(timedelta(hours=8)))
+    #print(_time)
     ## 換日
-    if _time.tm_hour>21 and _time.tm_hour < 24:
-        dateToday = datetime.date.today() + datetime.timedelta(days=1)
+    if _time.hour>21 and _time.hour < 24:
+        dateToday = _time + datetime.timedelta(days=1)
     else:
-        dateToday = datetime.date.today()
+        dateToday = _time
+    #print(dateToday)
     ######
     ##########
-    timeFrom = str(dateToday) + "T00:00:00"
-    timeTo = str(dateToday) + "T23:59:59"
+    timeFrom = dateToday.strftime("%Y-%m-%d") + "T00:00:00"
+    timeTo = dateToday.strftime("%Y-%m-%d") + "T23:59:59"
 
 
 
