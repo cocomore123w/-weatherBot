@@ -43,7 +43,7 @@ def get_data():
     ##
     url = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-D0047-065"
     params = {
-        "Authorization": "CWB-8AA28B89-03AC-455F-9EAC-6D0394AA9AD9",
+        "Authorization": "",
         "locationName": "三民區",
         "timeFrom": timeFrom,
         "timeTo": timeTo
