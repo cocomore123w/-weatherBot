@@ -25,7 +25,7 @@ timeZone=["0點-3點",
           "21點-0點"]
 
 def get_data():
-    _time = datetime.datetime.today().astimezone(timezone(timedelta(hours=8)))
+    _time = datetime.datetime.now().replace(tzinfo=timezone.utc).astimezone(timezone(timedelta(hours=8)))
     #print(_time)
     ## 換日
     if _time.hour>21 and _time.hour < 24:
